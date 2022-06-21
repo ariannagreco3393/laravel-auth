@@ -1,5 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('app')
-<div id="root"></div>
+<div id="app"></div>
 @endsection
