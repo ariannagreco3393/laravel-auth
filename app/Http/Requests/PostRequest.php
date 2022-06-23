@@ -29,8 +29,8 @@ class PostRequest extends FormRequest
                 'required',
                 Rule::unique('posts', 'title')->ignore($this->post)
             ],
-            'body' => ['nullable'],
-            'image' => ['nullable']
+            'cover_image' => ['nullable'],
+            'content' => ['nullable']
         ];
     }
 }

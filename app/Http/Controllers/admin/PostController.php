@@ -43,7 +43,15 @@ class PostController extends Controller
         //dd($request->all());
 
         // Validate data
-        $val_data = $request->validated();
+        $val_data = $request->validated([
+                'title' => [
+                    'required',
+                    Rule::unique('posts', 'title')->ignore($this->post)
+                ],
+                'cover_image'=>'nullable',
+                'content'=>'nullable'
+            ]
+        );
         // Gererate the slug
         $slug = Str::slug($request->title, '-');
         //dd($slug);
